@@ -1,0 +1,20 @@
+import vendedores.*
+import ciudad.*
+describe "VendedorFijo"{
+	const juanse = new  VendedorFijo (ciudadDondeVive="mercedes")
+test "test de Vendedor Fijo" {
+	assert.equals(juanse.ciudadDondeVive(),"mercedes")
+	assert.that(juanse.puedeTrabajarEn("mercedes"))
+}
+}
+
+describe "viajero"{
+	const buenosAires = new Provincia (ciudades=["mercedes","lanus","tigre"],cantidadDeHabitantes=3500)
+	//const santaFe = new Provincia (ciudades=["rosario"],cantidadDeHabitantes=3500)
+	const luciano = new Viajante (provinciasEnDondeTrabaja=[buenosAires])
+	test "luciano tets" {
+		assert.equals(luciano.provinciasEnDondeTrabaja(),[buenosAires])
+		assert.that(luciano.puedeTrabajarEn())
+	}
+}
+
